@@ -11,15 +11,21 @@ import UIKit
 class ResultViewController: UIViewController {
     @IBOutlet weak var gameOver: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var exitButton: UIButton!
     
+    var appBrain = AppBrain()
+    var score = "Your score: 0"
+    var allDone = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         exitButton.layer.borderColor = UIColor.white.cgColor
         exitButton.layer.borderWidth = 2
         exitButton.layer.cornerRadius = 10
+        scoreLabel.text = score
+        if allDone == false {
+            gameOver.text = "Well done!"
+        }
         // Do any additional setup after loading the view.
     }
     @IBAction func exitPressed(_ sender: UIButton) {

@@ -16,7 +16,7 @@
 		2CEF069924B793B9004F9E76 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF069624B793B9004F9E76 /* MenuViewController.swift */; };
 		2CEF069A24B793B9004F9E76 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF069724B793B9004F9E76 /* ResultViewController.swift */; };
 		2CEF069D24B793C3004F9E76 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF069B24B793C3004F9E76 /* Question.swift */; };
-		2CEF069E24B793C3004F9E76 /* appBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF069C24B793C3004F9E76 /* appBrain.swift */; };
+		2CEF06A024B8B631004F9E76 /* AppBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF069F24B8B631004F9E76 /* AppBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		2CEF069624B793B9004F9E76 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		2CEF069724B793B9004F9E76 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		2CEF069B24B793C3004F9E76 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		2CEF069C24B793C3004F9E76 /* appBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = appBrain.swift; sourceTree = "<group>"; };
+		2CEF069F24B8B631004F9E76 /* AppBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +78,8 @@
 		2CEF068E24B79376004F9E76 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2CEF069C24B793C3004F9E76 /* appBrain.swift */,
 				2CEF069B24B793C3004F9E76 /* Question.swift */,
+				2CEF069F24B8B631004F9E76 /* AppBrain.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -96,8 +96,8 @@
 		2CEF069024B79392004F9E76 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2CEF069524B793B9004F9E76 /* GameViewController.swift */,
 				2CEF069624B793B9004F9E76 /* MenuViewController.swift */,
+				2CEF069524B793B9004F9E76 /* GameViewController.swift */,
 				2CEF069724B793B9004F9E76 /* ResultViewController.swift */,
 			);
 			path = Controller;
@@ -174,8 +174,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CEF06A024B8B631004F9E76 /* AppBrain.swift in Sources */,
 				2CEF069A24B793B9004F9E76 /* ResultViewController.swift in Sources */,
-				2CEF069E24B793C3004F9E76 /* appBrain.swift in Sources */,
 				2CEF067B24B7934E004F9E76 /* AppDelegate.swift in Sources */,
 				2CEF069824B793B9004F9E76 /* GameViewController.swift in Sources */,
 				2CEF069D24B793C3004F9E76 /* Question.swift in Sources */,

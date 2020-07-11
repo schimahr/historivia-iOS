@@ -8,6 +8,8 @@
 
 import UIKit
 
+var appBrain = AppBrain()
+
 class GameViewController: UIViewController {
     @IBOutlet weak var livesLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
@@ -20,6 +22,7 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        appBrain.restartGame()
         buttonOne.layer.borderWidth = 2
         buttonOne.layer.borderColor = UIColor.white.cgColor
         buttonOne.layer.cornerRadius = 10
@@ -32,24 +35,51 @@ class GameViewController: UIViewController {
         buttonFour.layer.borderWidth = 2
         buttonFour.layer.borderColor = UIColor.white.cgColor
         buttonFour.layer.cornerRadius = 10
+        update()
     }
     
 
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToResult", sender: self)
+        let userAnswer = sender.currentTitle!
+        
+        if appBrain.checkAnswer(userAnswer) {
+            sender.backgroundColor = UIColor.green
+        } else {
+            sender.backgroundColor = UIColor.red
+            appBrain.takeLife()
+        }
+        if appBrain.checkLife() && appBrain.checkProgress() {
+            appBrain.nextQuestion()
+        } else {
+            self.performSegue(withIdentifier: "goToResult", sender: self)
+        }
 
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func update(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            self.update()
+        }
+        questionLabel.text = appBrain.getQuestion()
+        buttonOne.setTitle(appBrain.getAnswer(0), for: .normal)
+        buttonTwo.setTitle(appBrain.getAnswer(1), for: .normal)
+        buttonThree.setTitle(appBrain.getAnswer(2), for: .normal)
+        buttonFour.setTitle(appBrain.getAnswer(3), for: .normal)
+        buttonOne.backgroundColor = UIColor.clear
+        buttonTwo.backgroundColor = UIColor.clear
+        buttonThree.backgroundColor = UIColor.clear
+        buttonFour.backgroundColor = UIColor.clear
+        progressBar.progress = appBrain.getProgress()
+        livesLabel.text = appBrain.getLives()
     }
-    */
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResult"{
+            let destinationViewController = segue.destination as! ResultViewController
+            destinationViewController.score = appBrain.getScore()
+            destinationViewController.allDone = appBrain.checkProgress()
+        }
+    }
 
 }

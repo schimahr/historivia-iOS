@@ -6,4 +6,8 @@
 //  Copyright © 2020 Ivan. All rights reserved.
 //
 
-import Foundation
+struct Question {
+    let questionText: String
+    let answer: [String]
+    let correctAnswer: String
+}

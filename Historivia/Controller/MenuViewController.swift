@@ -13,7 +13,7 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var playButton: UIButton!
     
 
-
+    var appBrain = AppBrain()
     
     
     override func viewDidLoad() {
